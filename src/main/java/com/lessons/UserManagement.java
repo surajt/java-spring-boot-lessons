@@ -2,7 +2,9 @@ package com.lessons;
 
 import com.lessons.model.User;
 import com.lessons.repository.UserRepository;
+import org.springframework.stereotype.Service;
 
+@Service
 public class UserManagement {
     private final UserRepository userRepository;
 
