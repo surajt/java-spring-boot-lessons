@@ -2,14 +2,13 @@ package com.lessons;
 
 import com.lessons.repository.UserRepository;
 import com.lessons.service.UserService;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Main {
     public static void main(String[] args) {
-        UserRepository userRepository = new UserRepository();
-        UserService userService = new UserService(userRepository);
-
-        UserManagement userManagement = new UserManagement(userRepository);
-        userManagement.createSampleUserData();
+        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(SpringConfiguration.class);
+        UserService  userService = applicationContext.getBean(UserService.class);
 
         System.out.println("Show User Details");
         userService.showAllUsers();

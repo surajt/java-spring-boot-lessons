@@ -8,6 +8,7 @@ public class UserManagement {
 
     public UserManagement(UserRepository userRepository) {
         this.userRepository = userRepository;
+        this.createSampleUserData();
     }
 
     public void createUser(int userID, String firstName, String lastName, String email, String mobile, Boolean isAdmin)
