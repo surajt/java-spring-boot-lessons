@@ -1,13 +1,12 @@
 package com.lessons;
 
-import com.lessons.repository.UserRepository;
 import com.lessons.service.UserService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Main {
     public static void main(String[] args) {
-        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(SpringConfiguration.class);
+        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(Main.class.getPackageName());
         UserService  userService = applicationContext.getBean(UserService.class);
 
         System.out.println("Show User Details");
