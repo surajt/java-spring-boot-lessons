@@ -3,8 +3,6 @@ package com.lessons.app.user.controller;
 import com.lessons.app.user.model.User;
 import com.lessons.app.user.service.UserService;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -43,6 +41,6 @@ public class UserController {
     public User updateUser(@PathVariable Long userId, @RequestBody User user)
     {
         log.info("Update user id {} with user {}", userId, user);
-       return userService.updateUser(userId, user);
+        return userService.updateUser(userId, user);
     }
 }
